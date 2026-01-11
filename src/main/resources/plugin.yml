@@ -1,0 +1,11 @@
+name: dev.hyyperb.pythonrunner
+version: 1.0.6
+main: pythonrunner.CorePlugin
+api-version: 1.19.2
+
+commands:
+  runpy:
+    description: Run the python code inside written your book
+    usage: /<command>
+    permission: pythonrunner.commands.CommandRunPy
+

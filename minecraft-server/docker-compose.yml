@@ -1,0 +1,41 @@
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "19132:19132/udp"
+    environment:
+      VERSION: "1.20.5"
+      OPS: |-
+        hyyperb
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      PAPER_CHANNEL: experimental
+      MOTD: "hyyperb/minecraft-python default server config"
+      MEMORY: "4096M"
+      ONLINE_MODE: "false"
+      PLUGINS: |
+        https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
+        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
+        https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/5.7.0/PAPER/ViaVersion-5.7.0.jar
+        https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/5.7.0/PAPER/ViaBackwards-5.7.0.jar
+
+    volumes:
+      - "./data:/data"
+    networks:
+      - mcnet
+
+  snekbox:
+    image: ghcr.io/python-discord/snekbox
+    ports:
+      - "8060:8060"
+    privileged: true
+    ipc: none
+    networks:
+      - mcnet
+
+networks:
+  mcnet:
