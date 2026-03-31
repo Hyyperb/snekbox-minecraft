@@ -1,5 +1,5 @@
 name: dev.hyyperb.pythonrunner
-version: 1.0.6
+version: 1.0.7
 main: pythonrunner.CorePlugin
 api-version: 1.19.2
 
@@ -8,4 +8,9 @@ commands:
     description: Run the python code inside written your book
     usage: /<command>
     permission: pythonrunner.commands.CommandRunPy
+
+  graphpy:
+    discription: Plot a graph from python code by printing out coords in format x,y,z seperated by \n
+    usage: /<command>
+    permission: pythonrunner.commands.CommandGraphPy
 

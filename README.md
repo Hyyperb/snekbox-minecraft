@@ -10,6 +10,7 @@ Run python code inside minecraft!
 
 ## Usage
 
+### Run python code
 1. Write python code inside a book in minecraft
 
 ![screenshot-book](assets/screenshot-book.png)
@@ -21,6 +22,14 @@ Run python code inside minecraft!
 3. See the output in chat
 
 ![screenshot-output](assets/screenshot-output.png)
+
+### Rasterize block output
+
+1. Write code that prints out coords as x,y,z seperated by newlines
+2. hold the book with the code and run /graphpy
+![screenshot-book-graphpy](assets/screenshot-book-graphpy.png)
+3. it will overwrite any block at the output coords with white concrete
+![screenshot-heart-shape](assets/screenshot-heart-shape.png)
 
 ## Setup
 

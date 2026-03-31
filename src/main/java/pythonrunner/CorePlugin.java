@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import pythonrunner.commands.CommandGraphPy;
 import pythonrunner.commands.CommandRunPy;
 import snekboxwrapper.SnekboxClient;
 
@@ -29,6 +30,7 @@ public class CorePlugin extends JavaPlugin {
 
         getLogger().info("Plugin started!");
         Objects.requireNonNull(this.getCommand("runpy")).setExecutor(new CommandRunPy(host));
+        Objects.requireNonNull(this.getCommand("graphpy")).setExecutor(new CommandGraphPy(host));
 
         // PluginManager pluginManager = getServer().getPluginManager();
         // pluginManager.registerEvents(new ListenerBookEdited(this), this);
